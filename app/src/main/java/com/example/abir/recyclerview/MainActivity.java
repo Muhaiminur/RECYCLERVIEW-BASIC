@@ -11,9 +11,12 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Store> movieList = new ArrayList<>();
     private RecyclerView recyclerView;
     private StoreAdapter mAdapter;
+    EditText editTextSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,23 +66,63 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
         prepareMovieData();
+        //
+        editTextSearch = (EditText) findViewById(R.id.ser);
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //after the change calling the method and passing the search input
+                filter(editable.toString());
+            }
+        });
+        //
+    }
+    private void filter(String text) {
+        //new array list that will hold the filtered data
+        ArrayList<Store> filterdNames = new ArrayList<>();
+
+        //looping through existing elements
+        for (Store s : movieList) {
+            //if the existing elements contains the search input
+            if (s.getShopname().toLowerCase().contains(text.toLowerCase())) {
+                //adding the element to filtered list
+                filterdNames.add(s);
+            }
+        }
+
+        //calling a method of the adapter class and passing the filtered list
+        mAdapter.filterList(filterdNames);
     }
 
     private void prepareMovieData() {
         Store movie = new Store("JAMAL STORE", "JAMAL","UTTARA" ,"2015");
         movieList.add(movie);
 
-        Store movie2 = new Store("JAMAL STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie2 = new Store("abir STORE", "JAMAL","UTTARA" ,"2015");
         movieList.add(movie2);
-        Store movie3 = new Store("JAMAL STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie3 = new Store("cristiano STORE", "JAMAL","UTTARA" ,"2015");
         movieList.add(movie3);
-        Store movie4 = new Store("JAMAL STORE", "JAMAL","UTTARA" ,"2015");
-        movieList.add(movie4);
-        movieList.add(movie4);
-        movieList.add(movie4);
-        movieList.add(movie4);
-        movieList.add(movie4);
-        movieList.add(movie4);
+        Store movie4 = new Store("Rahul STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie5 = new Store("Rahul STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie6 = new Store("muhaiminur STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie7 = new Store("lol STORE", "JAMAL","UTTARA" ,"2015");
+        Store movie8 = new Store("Shakib STORE", "JAMAL","UTTARA" ,"2015");
+        movieList.add(movie5);
+        movieList.add(movie6);
+        movieList.add(movie7);
+        movieList.add(movie8);
+        movieList.add(movie2);
+        movieList.add(movie2);
         movieList.add(movie4);
         movieList.add(movie4);
         movieList.add(movie4);
