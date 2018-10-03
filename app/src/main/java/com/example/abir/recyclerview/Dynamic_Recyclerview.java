@@ -157,6 +157,7 @@ public class Dynamic_Recyclerview extends AppCompatActivity {
                 adapter.notifyDataChanged();
             }
         }, 3000);
+        try
 
     }
 }
