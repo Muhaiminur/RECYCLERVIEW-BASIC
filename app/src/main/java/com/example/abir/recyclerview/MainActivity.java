@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
 
         mAdapter = new StoreAdapter(movieList);
         recyclerView.setHasFixedSize(true);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }));
         prepareMovieData();
         //
-        editTextSearch = (EditText) findViewById(R.id.ser);
+        editTextSearch = findViewById(R.id.ser);
         editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

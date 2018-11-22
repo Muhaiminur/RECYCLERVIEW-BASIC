@@ -16,6 +16,10 @@ public class FInal_Main extends AppCompatActivity {
     Button normal;
     @BindView(R.id.dynamic)
     Button dynamic;
+    @BindView(R.id.library_one)
+    Button libraryOne;
+    @BindView(R.id.library_two)
+    Button libraryTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,7 @@ public class FInal_Main extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.normal, R.id.dynamic})
+    @OnClick({R.id.normal, R.id.dynamic, R.id.library_one,R.id.library_two})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.normal:
@@ -32,6 +36,12 @@ public class FInal_Main extends AppCompatActivity {
                 break;
             case R.id.dynamic:
                 startActivity(new Intent(FInal_Main.this, Dynamic_Recyclerview.class));
+                break;
+            case R.id.library_one:
+                startActivity(new Intent(FInal_Main.this, Infinite_Scroll.class));
+                break;
+            case R.id.library_two:
+                startActivity(new Intent(FInal_Main.this, No_Paginate.class));
                 break;
         }
     }

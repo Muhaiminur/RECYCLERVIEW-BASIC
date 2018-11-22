@@ -22,10 +22,10 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
 
         public MyViewHolder(View view) {
             super(view);
-            sh = (TextView) view.findViewById(R.id.shop);
-           own = (TextView) view.findViewById(R.id.malik);
-            add = (TextView) view.findViewById(R.id.adr);
-            mb = (TextView) view.findViewById(R.id.call);
+            sh = view.findViewById(R.id.shop);
+           own = view.findViewById(R.id.malik);
+            add = view.findViewById(R.id.adr);
+            mb = view.findViewById(R.id.call);
         }
     }
 

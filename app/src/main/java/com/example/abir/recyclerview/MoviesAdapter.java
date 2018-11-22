@@ -26,7 +26,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
 
     public MoviesAdapter(Context context, List<MovieModel> movies) {
-        this.context = context;
+        MoviesAdapter.context = context;
         this.movies = movies;
     }
 
@@ -75,8 +75,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         TextView tvRating;
         public MovieHolder(View itemView) {
             super(itemView);
-            tvTitle=(TextView)itemView.findViewById(R.id.title);
-            tvRating=(TextView)itemView.findViewById(R.id.rating);
+            tvTitle= itemView.findViewById(R.id.title);
+            tvRating= itemView.findViewById(R.id.rating);
         }
 
         void bindData(MovieModel movieModel){

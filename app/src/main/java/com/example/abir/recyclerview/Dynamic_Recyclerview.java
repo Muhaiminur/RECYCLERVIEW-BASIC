@@ -23,10 +23,10 @@ public class Dynamic_Recyclerview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dynamic__recyclerview);
+        setContentView(R.layout.activity_dynamic_recyclerview);
 
         context = this;
-        recyclerView = (RecyclerView) findViewById(R.id.dynamic_recycler);
+        recyclerView = findViewById(R.id.dynamic_recycler);
         movies = new ArrayList<>();
         adapter = new MoviesAdapter(this, movies);
         adapter.setLoadMoreListener(new MoviesAdapter.OnLoadMoreListener() {
@@ -157,7 +157,6 @@ public class Dynamic_Recyclerview extends AppCompatActivity {
                 adapter.notifyDataChanged();
             }
         }, 3000);
-        try
 
     }
 }

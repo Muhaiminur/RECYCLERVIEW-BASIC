@@ -18,4 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dynamic" />
+    <Button
+        android:id="@+id/library_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="InfiniteScroll" />
+    <Button
+        android:id="@+id/library_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NoPaginate" />
+
 </LinearLayout>
