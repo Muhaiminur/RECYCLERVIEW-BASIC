@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.abir.recyclerview.NO_PAGINATION.No_Paginate;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,7 +30,7 @@ public class FInal_Main extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.normal, R.id.dynamic, R.id.library_one,R.id.library_two})
+    @OnClick({R.id.normal, R.id.dynamic, R.id.library_one, R.id.library_two, R.id.card_slide})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.normal:
@@ -42,6 +44,9 @@ public class FInal_Main extends AppCompatActivity {
                 break;
             case R.id.library_two:
                 startActivity(new Intent(FInal_Main.this, No_Paginate.class));
+                break;
+            case R.id.card_slide:
+                startActivity(new Intent(FInal_Main.this, Card_Slider.class));
                 break;
         }
     }

@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.example.abir.recyclerview.NO_PAGINATION.Name_Adapter;
 import com.github.pwittchen.infinitescroll.library.InfiniteScrollListener;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class Infinite_Scroll extends AppCompatActivity {
 
     //
     private List<Name_Model> Name_models = new ArrayList<>();
-    private Name_Adapter Review_Adapter;
+    public Name_Adapter Review_Adapter;
     /*RecyclerView.LayoutManager*/LinearLayoutManager mLayoutManager;
 
     @BindView(R.id.infinite_recycler)

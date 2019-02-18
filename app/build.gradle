@@ -38,4 +38,7 @@ dependencies {
     implementation 'ru.alexbykov:nopaginate:0.9.9'
 
     implementation 'com.rdo:endlessrecyclerviewadapter:1.0.1'
+
+
+    implementation 'com.azoft.carousellayoutmanager:carousel:1.2.4'
 }

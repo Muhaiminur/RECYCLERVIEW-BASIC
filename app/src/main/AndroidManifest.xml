@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".Dynamic_Recyclerview" />
         <activity android:name=".Infinite_Scroll" />
-        <activity android:name=".No_Paginate"></activity>
+        <activity android:name=".NO_PAGINATION.No_Paginate" />
+        <activity android:name=".Card_Slider"></activity>
     </application>
 
 </manifest>

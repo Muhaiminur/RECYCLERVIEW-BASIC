@@ -1,4 +1,4 @@
-package com.example.abir.recyclerview;
+package com.example.abir.recyclerview.NO_PAGINATION;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.abir.recyclerview.Name_Model;
+import com.example.abir.recyclerview.R;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class Name_Adapter extends RecyclerView.Adapter<Name_Adapter.Name_View_Ho
     public Name_Adapter(List<Name_Model> notification, Context c) {
         name_models = notification;
         context = c;
-        Log.d("Entering","Recyclerview");
+        Log.d("Entering", "Recyclerview");
     }
 
     public class Name_View_Holder extends RecyclerView.ViewHolder {
@@ -33,6 +36,7 @@ public class Name_Adapter extends RecyclerView.Adapter<Name_Adapter.Name_View_Ho
         TextView lastName;
         @BindView(R.id.name_card)
         CardView nameCard;
+
         public Name_View_Holder(View view) {
             super(view);
             ButterKnife.bind(this, view);
@@ -61,5 +65,11 @@ public class Name_Adapter extends RecyclerView.Adapter<Name_Adapter.Name_View_Ho
     @Override
     public int getItemCount() {
         return name_models.size();
+    }
+
+    public void addItems(List<Name_Model> items) {
+        name_models.clear();
+        name_models.addAll(items);
+        notifyDataSetChanged();
     }
 }
